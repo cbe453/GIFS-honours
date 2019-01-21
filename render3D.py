@@ -15,7 +15,8 @@ import networkx as nx
 import pygraphviz as pg
 import plotly.graph_objs as go
 import plotly.plotly as py
-import plotly, prepIsoform3D, prepCollapsed3D
+import plotly
+#, prepIsoform3D, prepCollapsed3D
 import sys, re
 
 #######################################
@@ -96,7 +97,7 @@ def render3D():
 	group = []
 	shapes = []
 	isoformHash = {}
-	f1 = open(subName + "-nodes.txt", "w+")
+	#f1 = open(subName + "-nodes.txt", "w+")
 
 	###########################################
 	# generating a hash to check for isoforms output from programs
@@ -111,7 +112,7 @@ def render3D():
 				isoformHash[splitLine[1]] = 1
 		elif re.match("NODE", nodeDict['name']):
 			splitLine = node.split("_")
-			f1.write(splitLine[6] + "\n")
+			#f1.write(splitLine[6] + "\n")
 			if splitLine[6] in isoformHash:
 				isoformHash[splitLine[6]] += 1
 			else:
